@@ -11,7 +11,14 @@ Discord Bot的線上ticket解決方案
 ```py
 import requests
 r=requests.post("https://ticket.hans0805.me/upload",data={"token":"Discord機器人token"},files={'html_log': open('ticket.html','rb')})
-print(r.text)
+print(r.json())
+```
+
+查詢使用狀態
+```py
+import requests
+r=requests.get("https://ticket.hans0805.me/usage",data={"token":"Discord機器人token"})
+print(r.json())
 ```
 
 # 限制
